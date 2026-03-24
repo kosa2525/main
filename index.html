@@ -7,10 +7,11 @@
     <title>ドデカゴン | 17歳高校生プログラマーの制作物ハブ</title>
     <meta name="description" content="17歳高校生プログラマー・ドデカゴンの個人開発ハブ。AI動画生成、スクリプト生成、制作物アーカイブを公開中。">
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts & Font Awesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- CSS -->
     <link rel="stylesheet" href="index.css">
@@ -18,200 +19,163 @@
 
 <body>
 
-    <header>
-        <button class="nav-toggle" id="navToggle" aria-label="Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </header>
+    <button class="mobile-nav-toggle" id="mobileToggle">
+        <i class="fas fa-bars"></i>
+    </button>
 
-    <nav class="nav-menu" id="navMenu">
-        <a href="#hero">Top</a>
-        <a href="#profile">Profile</a>
-        <a href="#products">Latest Work</a>
-        <a href="#x-feed">Recent Posts</a>
-        <a href="#archive">Archive</a>
-        <a href="#history">History</a>
-    </nav>
+    <div class="layout-wrapper">
 
-    <main class="container">
+        <!-- 左サイドバー：ナビゲーション & ソーシャル -->
+        <aside class="sidebar-left" id="sidebarLeft">
+            <div class="logo">Dodecagon</div>
+            <nav class="side-nav">
+                <a href="#hero" class="active">Top</a>
+                <a href="#profile">Profile</a>
+                <a href="#products">Project</a>
+                <a href="#x-feed">News</a>
+                <a href="#history">Timeline</a>
+            </nav>
 
-        <!-- セクション①：ヒーロー -->
-        <section id="hero" class="hero">
-            <div class="target-badge">17歳高校生プログラマー / 個人開発</div>
-            <h1>「面倒」を「自動」に変える<br>実用ツールを開発しています</h1>
-            <p>AI・動画・自動化を軸に、<br>日常の作業をゼロにするソリューションを提案。</p>
-            <div class="scroll-indicator">
-                <div class="mouse"></div>
+            <div class="social-grid">
+                <a href="https://x.com/dodecagenshin12" class="social-icon" target="_blank" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://www.youtube.com/@dodecagenshin12" class="social-icon" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/@dodecagon_17y.o" class="social-icon" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/dodecagenshin12/" class="social-icon" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://web-tools-sell.booth.pm/" class="social-icon" target="_blank" title="BOOTH"><i class="fas fa-store"></i></a>
+                <a href="https://coconala.com/" class="social-icon" target="_blank" title="Coconala"><i class="fas fa-handshake"></i></a>
             </div>
-        </section>
+        </aside>
 
-        <!-- セクション②：プロフィール -->
-        <section id="profile">
-            <h2 class="section-title">プロフィール</h2>
-            <div class="profile-card">
-                <div class="profile-header">
-                    <div class="profile-avatar">👨‍💻</div>
-                    <div class="profile-info">
-                        <h3>ドデカゴン</h3>
-                        <p class="profile-age" id="ageDisplay">17歳 (2008.08.07生まれ)</p>
-                    </div>
-                </div>
-                <div class="profile-bio">
-                    高校生プログラマーとして、個人開発でアプリを制作中。AIを活用した勉強・副業の実験を日々行っています。
-                </div>
-                <div class="profile-credo">
-                    <h4>My Beliefs / 信条</h4>
-                    「失敗も成功も全部晒す（オープンな開発姿勢）」を掲げ、新しい技術への挑戦を透明性を持って共有します。
-                </div>
-                <div class="profile-links">
-                    <a href="https://x.com/dodecagenshin12" class="profile-link" target="_blank" rel="noopener">X (Twitter)</a>
-                    <a href="https://web-tools-sell.booth.pm/" class="profile-link" target="_blank" rel="noopener">BOOTH</a>
-                    <a href="https://coconala.com/" class="profile-link" target="_blank" rel="noopener">Coconala</a>
-                </div>
-            </div>
-        </section>
+        <!-- メインコンテンツ：ハブの中心 -->
+        <main class="main-content">
 
-        <!-- セクション③：最新の成果物 -->
-        <section id="products">
-            <h2 class="section-title">最新の成果物</h2>
+            <!-- ヒーロー -->
+            <section id="hero" class="hero">
+                <span class="section-label">Innovative Developer</span>
+                <h1>作業をゼロにする<br>実用ツールを形に。</h1>
+                <p>「面倒」を「自動」に。AIと自動化技術を駆使して、日常の不便を解消するソリューションを開発しています。</p>
+            </section>
 
-            <div class="product-card">
-                <div class="new-badge">NEW</div>
-                <div class="product-media">
-                    <img src="assets/img/shorts-v3.png" alt="Shorts動画生成ソフト ver.3.0">
+            <!-- プロフィール -->
+            <section id="profile">
+                <span class="section-label">Identity</span>
+                <div class="profile-hero">
+                    <div style="display: flex; align-items: center; gap: 24px; margin-bottom: 32px;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); border-radius: 24px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">👨‍💻</div>
+                        <div>
+                            <h2 style="font-size: 1.8rem;">ドデカゴン</h2>
+                            <p style="color: var(--accent-secondary); font-weight: 600;" id="ageDisplay">17歳 (2008.08.07生まれ)</p>
+                        </div>
+                    </div>
+                    <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 24px; line-height: 1.8;">
+                        高校生プログラマー。個人開発で「本当に使えるツール」を追求しています。AIを活用した副業実験や勉強の効率化など、自らの経験を元にリリース。
+                    </p>
+                    <div style="padding: 24px; background: rgba(255,255,255,0.02); border-radius: 20px; border-left: 4px solid var(--accent-tertiary);">
+                        <p style="font-size: 0.9rem; color: var(--accent-tertiary); font-weight: 800; text-transform: uppercase; margin-bottom: 8px;">Credo</p>
+                        <p style="font-style: italic;">「失敗も成功も全部晒す。透明性こそが最高の開発姿勢である。」</p>
+                    </div>
                 </div>
-                <div class="product-info">
-                    <h3 class="product-title">【完全自動】Shorts動画生成ソフト v3.0</h3>
-                    <p class="product-desc">2人対談形式の動画作成に対応。AIが台本から掛け合いのある動画まで全て自動で完結させます。</p>
-                    <a href="https://web-tools-sell.booth.pm/items/8124011" class="btn btn-secondary" target="_blank" rel="noopener">詳細・購入</a>
-                </div>
-            </div>
+            </section>
 
-            <div class="product-card">
-                <div class="product-media">
-                    <img src="assets/img/shorts-v2.png" alt="Shorts動画生成ソフト ver.2.0">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">【完全自動】Shorts動画生成ソフト v2.0</h3>
-                    <p class="product-desc">GUIを刷新し、キャラ配置やプレビュー機能を強化。より自由度の高いショート動画制作を自動化します。</p>
-                    <a href="https://web-tools-sell.booth.pm/items/8106600" class="btn btn-secondary" target="_blank" rel="noopener">詳細・購入</a>
-                </div>
-            </div>
-        </section>
+            <!-- 最新作品 -->
+            <section id="products">
+                <span class="section-label">Latest Products</span>
+                <div class="product-showcase">
+                    <div class="showcase-card">
+                        <div class="showcase-media">
+                            <img src="assets/img/shorts-v3.png" alt="Shorts v3.0">
+                        </div>
+                        <div class="showcase-info">
+                            <h3 style="font-size: 1.5rem; margin-bottom: 12px;">Shorts動画生成ソフト v3.0</h3>
+                            <p style="color: var(--text-muted); margin-bottom: 24px;">2人対談形式に対応。AIが台本作成から掛け合いの動画生成、字幕付けまで、すべてを全自動で完結させます。</p>
+                            <a href="https://web-tools-sell.booth.pm/items/8124011" class="btn btn-primary" target="_blank" rel="noopener">詳細・購入 <i class="fas fa-external-link-alt" style="margin-left: 8px;"></i></a>
+                        </div>
+                    </div>
 
-        <!-- セクション④：直近のX（Twitter）ポスト -->
-        <section id="x-feed">
-            <h2 class="section-title">最新のポスト</h2>
-            <div class="x-feed">
-                <div class="x-post">
-                    <div class="x-post-header">
-                        <span>@dodecagenshin12</span>
-                        <span>2026/03/19</span>
+                    <div class="showcase-card">
+                        <div class="showcase-media">
+                            <img src="assets/img/shorts-v2.png" alt="Shorts v2.0">
+                        </div>
+                        <div class="showcase-info">
+                            <h3 style="font-size: 1.5rem; margin-bottom: 12px;">Shorts動画生成ソフト v2.0</h3>
+                            <p style="color: var(--text-muted); margin-bottom: 24px;">GUI刷新版。直感的な配置変更とリアルタイムプレビューを強化。ショート動画運用の圧倒的効率化を支援します。</p>
+                            <a href="https://web-tools-sell.booth.pm/items/8106600" class="btn btn-secondary" target="_blank" rel="noopener">詳細・購入</a>
+                        </div>
                     </div>
-                    <div class="x-post-content">とても気になります。 
-この時代、普通に生きていればブラックボックスになっていることが多すぎて、こういう本がもっと増えていいと思っています。</div>
                 </div>
-                <div class="x-post">
-                    <div class="x-post-header">
-                        <span>@dodecagenshin12</span>
-                        <span>2026/03/08</span>
-                    </div>
-                    <div class="x-post-content">シンギュラリティも、そろそろですかね、、、、 
-頭脳的な面で言えば、もう達していそうですが、、、、。 能力的な面でも、、、。</div>
-                </div>
-                <div class="x-post">
-                    <div class="x-post-header">
-                        <span>@dodecagenshin12</span>
-                        <span>2026/03/02</span>
-                    </div>
-                    <div class="x-post-content">おお！！！！！おめでとうございます！！！ 
-伸びがすごい、、、！</div>
-                </div>
-            </div>
-            <div style="margin-top: 24px; text-align: center;">
-                <a href="https://x.com/dodecagenshin12" target="_blank" rel="noopener" class="btn btn-secondary">全てのポストをチェック</a>
-            </div>
-        </section>
+            </section>
 
-        <!-- セクション⑤：アーカイブ（過去の制作物） -->
-        <section id="archive">
-            <h2 class="section-title">アーカイブ</h2>
-            <div class="archive-grid">
-                <a href="https://web-tools-sell.booth.pm/items/8070809" class="archive-item" target="_blank" rel="noopener">
-                    <img src="assets/img/shorts-v1.png" alt="v1.0" class="archive-img">
-                    <div class="archive-text">
-                        <h4>Shorts動画生成ソフト v1.0</h4>
-                        <p>AI自動動画生成の第一歩。シンプルな構成での自動化を実現。</p>
+            <!-- Xニュース -->
+            <section id="x-feed">
+                <span class="section-label">X Feed</span>
+                <div style="display: grid; gap: 16px;">
+                    <div style="background: var(--card-bg); padding: 24px; border-radius: 20px; border: 1px solid var(--glass-border);">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 0.8rem; color: var(--text-muted);">
+                            <span>@dodecagenshin12</span>
+                            <span>2026/03/19</span>
+                        </div>
+                        <p style="font-size: 1rem;">気になります。この時代、ブラックボックスになっていることが多すぎて、こういう本が増えていいと思っています。</p>
                     </div>
-                </a>
-                <a href="https://booth.pm" class="archive-item" target="_blank" rel="noopener">
-                    <img src="assets/img/ai-boost-core.png" alt="AI Boost" class="archive-img">
-                    <div class="archive-text">
-                        <h4>AI Boost Core / Script Gen</h4>
-                        <p>初心者向けスクリプト生成支援。対話形式で高品質な出力を。</p>
+                    <div style="background: var(--card-bg); padding: 24px; border-radius: 20px; border: 1px solid var(--glass-border);">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 0.8rem; color: var(--text-muted);">
+                            <span>@dodecagenshin12</span>
+                            <span>2026/03/08</span>
+                        </div>
+                        <p style="font-size: 1rem;">シンギュラリティもそろそろですかね。頭脳面ではもう達していそうですが。</p>
                     </div>
-                </a>
-                <a href="https://booth.pm" class="archive-item" target="_blank" rel="noopener">
-                    <img src="assets/img/yukkuri-tool.png" alt="Yukkuri Tool" class="archive-img">
-                    <div class="archive-text">
-                        <h4>ゆっくり実況 原稿作成支援ツール</h4>
-                        <p>1時間の台本作成を5分に。効率化を極めた原稿作成ソフト。</p>
-                    </div>
-                </a>
-            </div>
-        </section>
+                </div>
+            </section>
 
-        <!-- セクション⑥：リリース履歴 -->
-        <section id="history">
-            <h2 class="section-title">リリース履歴</h2>
-            <div class="timeline">
-                <a href="https://web-tools-sell.booth.pm/items/8124011" target="_blank" rel="noopener" class="timeline-item">
-                    <div class="timeline-date">2026.03.24</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">Shorts動画生成ソフト ver.3.0 リリース</div>
+            <!-- 履歴 -->
+            <section id="history">
+                <span class="section-label">Milestones</span>
+                <div style="border-left: 2px solid var(--glass-border); padding-left: 32px;">
+                    <div style="margin-bottom: 32px; position: relative;">
+                        <div style="position: absolute; left: -39px; top: 0; width: 12px; height: 12px; background: var(--accent-secondary); border-radius: 50%;"></div>
+                        <p style="font-size: 0.8rem; color: var(--accent-secondary); font-weight: 800; margin-bottom: 4px;">2026.03.24</p>
+                        <h3>Shorts v3.0 リリース</h3>
                     </div>
+                    <div style="margin-bottom: 32px; position: relative;">
+                        <div style="position: absolute; left: -39px; top: 0; width: 12px; height: 12px; background: var(--text-muted); border-radius: 50%;"></div>
+                        <p style="font-size: 0.8rem; color: var(--text-muted); font-weight: 800; margin-bottom: 4px;">2026.03.20</p>
+                        <h3>Shorts v2.0 リリース</h3>
+                    </div>
+                </div>
+            </section>
+
+            <footer style="text-align: center; color: var(--text-muted); font-size: 0.8rem; padding-top: 60px;">
+                © 2026 Dodecagon. All Rights Reserved.
+            </footer>
+        </main>
+
+        <!-- 右サイドバー：アーカイブギャラリー -->
+        <aside class="sidebar-right">
+            <span class="section-label" style="font-size: 0.7rem; margin-bottom: 24px;">Archive Gallery</span>
+            <div class="archive-gallery">
+                <a href="https://web-tools-sell.booth.pm/items/8124011" class="archive-thumb" target="_blank">
+                    <img src="assets/img/shorts-v3.png" alt="v3.0">
+                    <div class="archive-title">Shorts v3.0</div>
                 </a>
-                <a href="https://web-tools-sell.booth.pm/items/8106600" target="_blank" rel="noopener" class="timeline-item">
-                    <div class="timeline-date">2026.03.20</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">Shorts動画生成ソフト ver.2.0 リリース</div>
-                    </div>
+                <a href="https://web-tools-sell.booth.pm/items/8106600" class="archive-thumb" target="_blank">
+                    <img src="assets/img/shorts-v2.png" alt="v2.0">
+                    <div class="archive-title">Shorts v2.0</div>
                 </a>
-                <a href="https://web-tools-sell.booth.pm/items/8070809" target="_blank" rel="noopener" class="timeline-item">
-                    <div class="timeline-date">2026.03.11</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">Shorts動画生成ソフト リリース</div>
-                    </div>
+                <a href="https://web-tools-sell.booth.pm/items/8070809" class="archive-thumb" target="_blank">
+                    <img src="assets/img/shorts-v1.png" alt="v1.0">
+                    <div class="archive-title">Shorts v1.0</div>
                 </a>
-                <a href="https://booth.pm" target="_blank" rel="noopener" class="timeline-item">
-                    <div class="timeline-date">2026.02.26</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">AI Boost Core リリース</div>
-                    </div>
+                <a href="https://booth.pm" class="archive-thumb" target="_blank">
+                    <img src="assets/img/ai-boost-core.png" alt="AI Boost">
+                    <div class="archive-title">AI Boost Core</div>
                 </a>
-                <a href="https://booth.pm" target="_blank" rel="noopener" class="timeline-item">
-                    <div class="timeline-date">2026.01.20</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">ゆっくり実況 生成ツール 公開</div>
-                    </div>
+                <a href="https://booth.pm" class="archive-thumb" target="_blank">
+                    <img src="assets/img/yukkuri-tool.png" alt="Yukkuri Tool">
+                    <div class="archive-title">Yukkuri Script</div>
                 </a>
             </div>
-        </section>
+        </aside>
 
-    </main>
-
-    <!-- フッター -->
-    <footer>
-        <div class="footer-links">
-            <a href="https://x.com/dodecagenshin12" target="_blank" rel="noopener">X (Twitter)</a>
-            <a href="https://web-tools-sell.booth.pm/" target="_blank" rel="noopener">BOOTH</a>
-            <a href="https://coconala.com/" target="_blank" rel="noopener">Coconala</a>
-        </div>
-        <p class="copy">© 2026 ドデカゴン. All Rights Reserved.</p>
-        <p class="disclaimer">※個人による開発・運営です。最新情報はXをご確認ください。</p>
-    </footer>
+    </div>
 
     <script>
         // Age Calculation
@@ -228,40 +192,30 @@
         const age = calculateAge('2008-08-07');
         document.getElementById('ageDisplay').textContent = `${age}歳 (2008.08.07生まれ)`;
 
-        // Hamburger Menu Toggle
-        const navToggle = document.getElementById('navToggle');
-        const navMenu = document.getElementById('navMenu');
-        
-        navToggle.addEventListener('click', () => {
-            navToggle.classList.toggle('active');
-            navMenu.classList.toggle('active');
+        // Mobile Nav Logic
+        const mobileToggle = document.getElementById('mobileToggle');
+        const sidebarLeft = document.getElementById('sidebarLeft');
+
+        mobileToggle.addEventListener('click', () => {
+            sidebarLeft.classList.toggle('active');
+            mobileToggle.innerHTML = sidebarLeft.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
         });
 
-        // Close menu on link click
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                navToggle.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
-        });
-
-        // Intersection Observer for scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
+        // Intersection Observer for Scroll Effects
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
+                    // Update active nav
+                    const id = entry.target.getAttribute('id');
+                    document.querySelectorAll('.side-nav a').forEach(a => {
+                        a.classList.toggle('active', a.getAttribute('href') === `#${id}`);
+                    });
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.2 });
 
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
-        });
+        document.querySelectorAll('section').forEach(section => observer.observe(section));
     </script>
 </body>
 
