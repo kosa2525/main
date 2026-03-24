@@ -4,15 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>個人開発者のツール・制作物まとめ | 作業を減らすための実用ツール</title>
-    <meta name="description" content="動画制作・AI活用・LP作成を“面倒じゃなくす”個人開発者の集客ハブ。ゆっくり実況原稿生成、YouTube Shorts自動化、LPテンプレートなどを提供中。">
+    <title>ドデカゴン | 17歳高校生プログラマーの制作物ハブ</title>
+    <meta name="description" content="17歳高校生プログラマー・ドデカゴンの個人開発ハブ。AI動画生成、スクリプト生成、制作物アーカイブを公開中。">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@400;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
     <link rel="stylesheet" href="index.css">
@@ -20,127 +18,168 @@
 
 <body>
 
+    <header>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <nav class="nav-menu" id="navMenu">
+        <a href="#hero">Top</a>
+        <a href="#profile">Profile</a>
+        <a href="#products">Latest Work</a>
+        <a href="#x-feed">Recent Posts</a>
+        <a href="#archive">Archive</a>
+        <a href="#history">History</a>
+    </nav>
+
     <main class="container">
 
-        <!-- セクション①：ファーストビュー -->
+        <!-- セクション①：ヒーロー -->
         <section id="hero" class="hero">
-            <div class="target-badge">動画制作・AI・個人開発</div>
-            <h1>作業を減らすための<br>実用ツールを作っています</h1>
-            <p>動画制作・AI活用・LP作成を<br>“面倒じゃなくす”個人開発者</p>
+            <div class="target-badge">17歳高校生プログラマー / 個人開発</div>
+            <h1>「面倒」を「自動」に変える<br>実用ツールを開発しています</h1>
+            <p>AI・動画・自動化を軸に、<br>日常の作業をゼロにする soloutionを提案。</p>
             <div class="scroll-indicator">
                 <div class="mouse"></div>
             </div>
         </section>
 
-        <!-- セクション②：何をしている人か（一覧） -->
-        <section id="features">
-            <h2 class="section-title">活動内容</h2>
-            <div class="feature-list">
-                <div class="feature-item">
-                    <div class="feature-icon">🎬</div>
-                    <div class="feature-text">ゆっくり実況 原稿自動生成ソフト</div>
+        <!-- セクション②：プロフィール -->
+        <section id="profile">
+            <h2 class="section-title">プロフィール</h2>
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="profile-avatar">👨‍💻</div>
+                    <div class="profile-info">
+                        <h3>ドデカゴン</h3>
+                        <p class="profile-age" id="ageDisplay">17歳 (2008.08.07生まれ)</p>
+                    </div>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🤖</div>
-                    <div class="feature-text">初心者向けAIスクリプト生成</div>
+                <div class="profile-bio">
+                    高校生プログラマーとして、個人開発でアプリを制作中。AIを活用した勉強・副業の実験を日々行っています。
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">📄</div>
-                    <div class="feature-text">LPテンプレート販売・オリジナル制作</div>
+                <div class="profile-credo">
+                    <h4>My Beliefs / 信条</h4>
+                    「失敗も成功も全部晒す（オープンな開発姿勢）」を掲げ、新しい技術への挑戦を透明性を持って共有します。
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">📈</div>
-                    <div class="feature-text">【完全自動】Shorts動画生成ソフト リリース済み</div>
+                <div class="profile-links">
+                    <a href="https://x.com/dodecagenshin12" class="profile-link" target="_blank" rel="noopener">X (Twitter)</a>
+                    <a href="https://web-tools-sell.booth.pm/" class="profile-link" target="_blank" rel="noopener">BOOTH</a>
+                    <a href="https://coconala.com/users/4549925" class="profile-link" target="_blank" rel="noopener">Coconala</a>
                 </div>
             </div>
         </section>
 
-        <!-- セクション③：代表的な成果物 -->
+        <!-- セクション③：最新の成果物 -->
         <section id="products">
-            <h2 class="section-title">主な成果物</h2>
+            <h2 class="section-title">最新の成果物</h2>
 
-            <!-- 最新（NEW）の成果物：Shorts動画生成ソフト v3.0 -->
             <div class="product-card">
                 <div class="new-badge">NEW</div>
                 <div class="product-media">
                     <img src="assets/img/shorts-v3.png" alt="Shorts動画生成ソフト ver.3.0">
                 </div>
                 <div class="product-info">
-                    <h3 class="product-title">【完全自動】Shorts動画生成ソフト ver.3.0</h3>
+                    <h3 class="product-title">【完全自動】Shorts動画生成ソフト v3.0</h3>
                     <p class="product-desc">2人対談形式の動画作成に対応。AIが台本から掛け合いのある動画まで全て自動で完結させます。</p>
                     <a href="https://web-tools-sell.booth.pm/items/8124011" class="btn btn-secondary" target="_blank" rel="noopener">詳細・購入</a>
                 </div>
             </div>
 
-            <!-- Shorts動画生成ソフト v2.0 -->
             <div class="product-card">
                 <div class="product-media">
                     <img src="assets/img/shorts-v2.png" alt="Shorts動画生成ソフト ver.2.0">
                 </div>
                 <div class="product-info">
-                    <h3 class="product-title">【完全自動】Shorts動画生成ソフト ver.2.0</h3>
+                    <h3 class="product-title">【完全自動】Shorts動画生成ソフト v2.0</h3>
                     <p class="product-desc">GUIを刷新し、キャラ配置やプレビュー機能を強化。より自由度の高いショート動画制作を自動化します。</p>
                     <a href="https://web-tools-sell.booth.pm/items/8106600" class="btn btn-secondary" target="_blank" rel="noopener">詳細・購入</a>
                 </div>
             </div>
+        </section>
 
-            <!-- 従来版 -->
-            <div class="product-card">
-                <div class="product-media product-shorts">
-                    <img src="assets/img/shorts-video-generator.png" alt="Shorts動画生成ソフト v1.0">
+        <!-- セクション④：直近のX（Twitter）ポスト -->
+        <section id="x-feed">
+            <h2 class="section-title">最新のポスト</h2>
+            <div class="x-feed">
+                <div class="x-post">
+                    <div class="x-post-header">
+                        <span>@dodecagenshin12</span>
+                        <span>2026/03/19</span>
+                    </div>
+                    <div class="x-post-content">とても気になります。 
+この時代、普通に生きていればブラックボックスになっていることが多すぎて、こういう本がもっと増えていいと思っています。</div>
                 </div>
-                <div class="product-info">
-                    <h3 class="product-title">【完全自動】Shorts動画生成ソフト v1.0</h3>
-                    <p class="product-desc">AIが台本作成から動画生成まで全て自動完結。YouTube Shorts運用の手間をゼロにします。</p>
-                    <a href="https://web-tools-sell.booth.pm/items/8070809" class="btn btn-secondary" target="_blank" rel="noopener">詳細・購入</a>
+                <div class="x-post">
+                    <div class="x-post-header">
+                        <span>@dodecagenshin12</span>
+                        <span>2026/03/08</span>
+                    </div>
+                    <div class="x-post-content">シンギュラリティも、そろそろですかね、、、、 
+頭脳的な面で言えば、もう達していそうですが、、、、。 能力的な面でも、、、。</div>
+                </div>
+                <div class="x-post">
+                    <div class="x-post-header">
+                        <span>@dodecagenshin12</span>
+                        <span>2026/03/02</span>
+                    </div>
+                    <div class="x-post-content">おお！！！！！おめでとうございます！！！ 
+伸びがすごい、、、！</div>
                 </div>
             </div>
-
-            <div class="product-card">
-                <div class="product-media product-1">
-                    <!-- 画像や動画がある場合はここに挿入。なくても背景グラデーションで維持されます -->
-                    <!-- <img src="assets/img/latest-demo.jpg" alt="最新ツールのデモ"> -->
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">AI Boost Core / Script Generator</h3>
-                    <p class="product-desc">初心者でもプロ級のスクリプトを生成。対話型インターフェースで直感的に操作可能。</p>
-                    <a href="https://booth.pm" class="btn btn-secondary" target="_blank" rel="noopener">詳細・購入</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-media product-2">
-                    <!-- 動画の例（コメントアウト） -->
-                    <!-- <video src="assets/video/demo.mp4" autoplay loop muted playsinline></video> -->
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">ゆっくり実況 原稿作成支援ツール</h3>
-                    <p class="product-desc">台本構成の悩みを解消。1時間の作業を5分に短縮する自動化ソリューション。</p>
-                    <a href="https://booth.pm" class="btn btn-secondary" target="_blank" rel="noopener">BOOTHで見る</a>
-                </div>
+            <div style="margin-top: 24px; text-align: center;">
+                <a href="https://x.com/dodecagenshin12" target="_blank" rel="noopener" class="btn btn-secondary">全てのポストをチェック</a>
             </div>
         </section>
 
-        <!-- 新設：リリース履歴（タイムライン） -->
+        <!-- セクション⑤：アーカイブ（過去の制作物） -->
+        <section id="archive">
+            <h2 class="section-title">アーカイブ</h2>
+            <div class="archive-grid">
+                <a href="https://web-tools-sell.booth.pm/items/8070809" class="archive-item" target="_blank" rel="noopener">
+                    <img src="assets/img/shorts-v1.png" alt="v1.0" class="archive-img">
+                    <div class="archive-text">
+                        <h4>Shorts動画生成ソフト v1.0</h4>
+                        <p>AI自動動画生成の第一歩。シンプルな構成での自動化を実現。</p>
+                    </div>
+                </a>
+                <a href="https://booth.pm" class="archive-item" target="_blank" rel="noopener">
+                    <img src="assets/img/ai-boost-core.png" alt="AI Boost" class="archive-img">
+                    <div class="archive-text">
+                        <h4>AI Boost Core / Script Gen</h4>
+                        <p>初心者向けスクリプト生成支援。対話形式で高品質な出力を。</p>
+                    </div>
+                </a>
+                <a href="https://booth.pm" class="archive-item" target="_blank" rel="noopener">
+                    <img src="assets/img/yukkuri-tool.png" alt="Yukkuri Tool" class="archive-img">
+                    <div class="archive-text">
+                        <h4>ゆっくり実況 原稿作成支援ツール</h4>
+                        <p>1時間の台本作成を5分に。効率化を極めた原稿作成ソフト。</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- セクション⑥：リリース履歴 -->
         <section id="history">
             <h2 class="section-title">リリース履歴</h2>
             <div class="timeline">
-                <a href="https://web-tools-sell.booth.pm/items/8124011" target="_blank" rel="noopener"
-                    class="timeline-item">
+                <a href="https://web-tools-sell.booth.pm/items/8124011" target="_blank" rel="noopener" class="timeline-item">
                     <div class="timeline-date">2026.03.24</div>
                     <div class="timeline-content">
                         <div class="timeline-title">Shorts動画生成ソフト ver.3.0 リリース</div>
                     </div>
                 </a>
-                <a href="https://web-tools-sell.booth.pm/items/8106600" target="_blank" rel="noopener"
-                    class="timeline-item">
+                <a href="https://web-tools-sell.booth.pm/items/8106600" target="_blank" rel="noopener" class="timeline-item">
                     <div class="timeline-date">2026.03.20</div>
                     <div class="timeline-content">
                         <div class="timeline-title">Shorts動画生成ソフト ver.2.0 リリース</div>
                     </div>
                 </a>
-                <a href="https://web-tools-sell.booth.pm/items/8070809" target="_blank" rel="noopener"
-                    class="timeline-item">
+                <a href="https://web-tools-sell.booth.pm/items/8070809" target="_blank" rel="noopener" class="timeline-item">
                     <div class="timeline-date">2026.03.11</div>
                     <div class="timeline-content">
                         <div class="timeline-title">Shorts動画生成ソフト リリース</div>
@@ -153,12 +192,6 @@
                     </div>
                 </a>
                 <a href="https://booth.pm" target="_blank" rel="noopener" class="timeline-item">
-                    <div class="timeline-date">2026.02.15</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">LPテンプレート v2.0 アップデート</div>
-                    </div>
-                </a>
-                <a href="https://booth.pm" target="_blank" rel="noopener" class="timeline-item">
                     <div class="timeline-date">2026.01.20</div>
                     <div class="timeline-content">
                         <div class="timeline-title">ゆっくり実況 生成ツール 公開</div>
@@ -167,49 +200,55 @@
             </div>
         </section>
 
-        <!-- セクション④：リンク導線 -->
-        <section id="links">
-            <h2 class="section-title">リンク</h2>
-            <div class="cta-group">
-                <a href="#products" class="btn btn-primary">成果物・ツール一覧</a>
-                <a href="https://booth.pm" target="_blank" rel="noopener" class="btn btn-secondary">BOOTHで購入</a>
-                <a href="https://coconala.com" target="_blank" rel="noopener" class="btn btn-secondary">ココナラで依頼</a>
-                <a href="https://x.com" target="_blank" rel="noopener" class="btn btn-secondary">固定ポストを見る (X)</a>
-            </div>
-        </section>
-
-        <!-- セクション⑤：スタンス -->
-        <section id="stance">
-            <h2 class="section-title">大切にしていること</h2>
-            <div class="stance-container">
-                <div class="stance-card">
-                    <p>・初心者でも使える設計を重視</p>
-                </div>
-                <div class="stance-card">
-                    <p>・実用レベルのものだけ公開</p>
-                </div>
-                <div class="stance-card">
-                    <p>・改善・更新を前提に制作</p>
-                </div>
-            </div>
-        </section>
-
     </main>
 
-    <!-- セクション⑥：フッター -->
+    <!-- フッター -->
     <footer>
         <div class="footer-links">
-            <a href="https://x.com">X (Twitter)</a>
-            <a href="mailto:example@example.com">Contact</a>
+            <a href="https://x.com/dodecagenshin12" target="_blank" rel="noopener">X (Twitter)</a>
+            <a href="https://web-tools-sell.booth.pm/" target="_blank" rel="noopener">BOOTH</a>
+            <a href="https://coconala.com/users/4549925" target="_blank" rel="noopener">Coconala</a>
         </div>
-        <p class="copy">© 2026 個人開発者. All Rights Reserved.</p>
+        <p class="copy">© 2026 ドデカゴン. All Rights Reserved.</p>
         <p class="disclaimer">※個人による開発・運営です。最新情報はXをご確認ください。</p>
     </footer>
 
     <script>
+        // Age Calculation
+        function calculateAge(birthDate) {
+            const today = new Date();
+            const birth = new Date(birthDate);
+            let age = today.getFullYear() - birth.getFullYear();
+            const m = today.getMonth() - birth.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) {
+                age--;
+            }
+            return age;
+        }
+        const age = calculateAge('2008-08-07');
+        document.getElementById('ageDisplay').textContent = `${age}歳 (2008.08.07生まれ)`;
+
+        // Hamburger Menu Toggle
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu on link click
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
         // Intersection Observer for scroll animations
         const observerOptions = {
-            threshold: 0.1
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -222,16 +261,6 @@
 
         document.querySelectorAll('section').forEach(section => {
             observer.observe(section);
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
         });
     </script>
 </body>
