@@ -115,66 +115,22 @@
                 </div>
             </section>
 
-            <!-- Xニュース (プレミアム・ハイブリッド) -->
+            <!-- Xニュース (完全自動・公式ウィジェット) -->
             <section id="x-feed">
-                <span class="section-label">Live Insights on X</span>
+                <span class="section-label">Live Feed on X</span>
                 
-                <!-- 1. 自動更新ウィジェット (成功すれば表示) -->
-                <div id="x-timeline-mount" style="margin-bottom: 32px; border-radius: 24px; overflow: hidden; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); display: none;">
-                    <!-- JSで動的に追加されます -->
-                </div>
-
-                <!-- 2. カスタム・バックアップフィード (全体をタップ可能に) -->
-                <div id="x-manual-fallback" style="display: grid; gap: 32px;">
-                    
-                    <!-- Latest Post -->
-                    <a href="https://x.com/dodecagenshin12/status/2036039867961115027" target="_blank" class="x-card-link">
-                        <div class="x-card">
-                            <div class="x-card-header">
-                                <div class="profile-avatar-zoom" style="width: 40px; height: 40px; border-radius: 10px;"></div>
-                                <div style="flex: 1; margin-left: 12px;">
-                                    <div style="font-weight: 800; font-size: 0.9rem;">ドデカゴン <i class="fas fa-check-circle" style="color: var(--accent-secondary); font-size: 0.8rem;"></i></div>
-                                    <div style="color: var(--text-muted); font-size: 0.75rem;">@dodecagenshin12</div>
-                                </div>
-                                <i class="fab fa-x-twitter" style="font-size: 1.2rem; color: var(--text-muted);"></i>
-                            </div>
-                            <div class="x-card-body">
-                                <p>Qwen君、中国語混じり大問題だったけど...ついに解決した！！！？ プロンプトに「日本語以外の言語を入れたら爆発するよ！！」って書いてみたら、めちゃくちゃ抑制できた...！！</p>
-                                <div class="x-card-media">
-                                    <img src="https://pbs.twimg.com/media/HEF3Ymkb0AAJLrP?format=png&name=large" alt="Post content">
-                                </div>
-                            </div>
-                            <div class="x-card-footer">
-                                <span>20:18 · 2026/03/23</span>
-                                <span class="x-view-link">Tap to View <i class="fas fa-external-link-alt"></i></span>
-                            </div>
-                        </div>
+                <div id="x-widget-container" style="min-height: 400px; background: rgba(0,0,0,0.4); border-radius: 24px; border: 1px solid var(--glass-border); overflow: visible !important;">
+                    <p id="x-loading-hint" style="text-align: center; padding: 40px; color: var(--text-muted); font-size: 0.9rem;">
+                        <i class="fas fa-spinner fa-spin"></i> Xタイムラインを読み込み中...<br>
+                        <span style="font-size: 0.7rem;">(表示されない場合は広告ブロック等の設定をご確認ください)</span>
+                    </p>
+                    <a class="twitter-timeline" 
+                       data-lang="ja" 
+                       data-theme="dark" 
+                       data-height="600" 
+                       href="https://twitter.com/dodecagenshin12?ref_src=twsrc%5Etfw">
+                        Tweets by dodecagenshin12
                     </a>
-
-                    <!-- Previous Post -->
-                    <a href="https://x.com/dodecagenshin12/status/2035676246240321695" target="_blank" class="x-card-link">
-                        <div class="x-card">
-                            <div class="x-card-header">
-                                <div class="profile-avatar-zoom" style="width: 40px; height: 40px; border-radius: 10px;"></div>
-                                <div style="flex: 1; margin-left: 12px;">
-                                    <div style="font-weight: 800; font-size: 0.9rem;">ドデカゴン <i class="fas fa-check-circle" style="color: var(--accent-secondary); font-size: 0.8rem;"></i></div>
-                                    <div style="color: var(--text-muted); font-size: 0.75rem;">@dodecagenshin12</div>
-                                </div>
-                                <i class="fab fa-x-twitter" style="font-size: 1.2rem; color: var(--text-muted);"></i>
-                            </div>
-                            <div class="x-card-body">
-                                <p>ローカルLLMに「宇宙の果てのカフェでブラックホールを眺めながらコーヒー飲む猫」描かせてみたんだけど... 大惨事すぎて笑った！！！</p>
-                                <div class="x-card-media">
-                                    <img src="https://pbs.twimg.com/media/HEAsk9PbcAAWu1N?format=jpg&name=large" alt="Post content">
-                                </div>
-                            </div>
-                            <div class="x-card-footer">
-                                <span>20:13 · 2026/03/22</span>
-                                <span class="x-view-link">Tap to View <i class="fas fa-external-link-alt"></i></span>
-                            </div>
-                        </div>
-                    </a>
-
                 </div>
             </section>
 
@@ -229,42 +185,20 @@
 
     </div>
 
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script>
-        // X Widget Initialization (Programmatic approach for stability)
-        window.twttr = (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0],
-                t = window.twttr || {};
-            if (d.getElementById(id)) return t;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "https://platform.twitter.com/widgets.js";
-            fjs.parentNode.insertBefore(js, fjs);
-            t._e = [];
-            t.ready = function(f) {
-                t._e.push(f);
-            };
-            return t;
-        }(document, "script", "twitter-wjs"));
-
-        twttr.ready(function(twttr) {
-            twttr.widgets.createTimeline(
-                {
-                    sourceType: "profile",
-                    screenName: "dodecagenshin12"
-                },
-                document.getElementById("x-timeline-mount"),
-                {
-                    height: 600,
-                    theme: "dark",
-                    chrome: "transparent noheader nofooter noborders"
+        // X Widget Observer: Hide loading hint when widget appears
+        document.addEventListener('DOMContentLoaded', () => {
+            const checkExist = setInterval(() => {
+                const widget = document.querySelector('.twitter-timeline-rendered');
+                if (widget) {
+                    document.getElementById('x-loading-hint').style.display = 'none';
+                    clearInterval(checkExist);
                 }
-            ).then(function (el) {
-                if (el) {
-                    document.getElementById("x-timeline-mount").style.display = "block";
-                    // If widget loads, we can optionally hide manual ones, but keeping both for now
-                    // document.getElementById("x-manual-fallback").style.display = "none";
-                }
-            });
+            }, 500);
+            
+            // Timeout after 10s
+            setTimeout(() => clearInterval(checkExist), 10000);
         });
 
         // Age Calculation
