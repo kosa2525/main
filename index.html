@@ -115,20 +115,20 @@
                 </div>
             </section>
 
-            <!-- Xニュース (自動更新・iframe直接埋め込み方式) -->
-            <!-- widgets.jsを使わず、syndication.twitter.comのiframeを直接埋め込み -->
-            <!-- これによりスクリプトブロックを完全に回避し、自動更新を実現 -->
+            <!-- Xニュース (X公式ウィジェット方式) -->
             <section id="x-feed">
                 <span class="section-label">Live Feed on X</span>
                 
-                <div style="background: rgba(0,0,0,0.3); border-radius: 24px; border: 1px solid var(--glass-border); overflow: hidden;">
-                    <iframe 
-                        src="https://syndication.twitter.com/srv/timeline-profile/screen-name/dodecagenshin12?dnt=false&embedId=twitter-widget-0&frame=false&hideBorder=true&hideFooter=true&hideHeader=true&hideScrollBar=false&lang=ja&maxHeight=600px&theme=dark&transparent=true" 
-                        style="width: 100%; height: 600px; border: none; display: block;" 
-                        sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
-                        loading="lazy"
-                        title="X Timeline">
-                    </iframe>
+                <div style="background: rgba(0,0,0,0.3); border-radius: 24px; border: 1px solid var(--glass-border); overflow: hidden; padding: 16px;">
+                    <a class="twitter-timeline" 
+                       data-theme="dark" 
+                       data-height="600" 
+                       data-lang="ja"
+                       data-chrome="noheader nofooter noborders transparent"
+                       href="https://twitter.com/dodecagenshin12">
+                       読み込み中...
+                    </a>
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
             </section>
 
