@@ -115,21 +115,77 @@
                 </div>
             </section>
 
-            <!-- Xニュース (X公式ウィジェット方式) -->
+            <!-- Xニュース (公式ウィジェット + フォールバック) -->
             <section id="x-feed">
                 <span class="section-label">Live Feed on X</span>
                 
-                <div style="background: rgba(0,0,0,0.3); border-radius: 24px; border: 1px solid var(--glass-border); overflow: hidden; padding: 16px;">
-                    <a class="twitter-timeline" 
-                       data-theme="dark" 
-                       data-height="600" 
-                       data-lang="ja"
-                       data-chrome="noheader nofooter noborders transparent"
-                       href="https://twitter.com/dodecagenshin12">
-                       読み込み中...
-                    </a>
-                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <div id="x-widget-wrapper" style="background: rgba(0,0,0,0.3); border-radius: 24px; border: 1px solid var(--glass-border); min-height: 200px; display: flex; align-items: center; justify-content: center;">
+                    <!-- X公式ウィジェット -->
+                    <div id="x-timeline-container" style="width: 100%;">
+                        <a class="twitter-timeline" 
+                           data-theme="dark" 
+                           data-height="600" 
+                           data-lang="ja"
+                           data-chrome="noheader nofooter noborders transparent"
+                           href="https://twitter.com/dodecagenshin12">
+                           タイムラインを読み込み中...
+                        </a>
+                    </div>
+
+                    <!-- フォールバック用カード (ウィジェット失敗時にJSで表示) -->
+                    <div id="x-fallback" class="x-fallback-container" style="width: 100%; padding: 0;">
+                        <a href="https://x.com/dodecagenshin12" target="_blank" class="x-card-link">
+                            <div class="x-card">
+                                <div class="x-card-header">
+                                    <div class="profile-avatar-zoom" style="width: 48px; height: 48px; border-radius: 50%;"></div>
+                                    <div class="x-user-info">
+                                        <span class="x-user-name">ドデカゴン</span>
+                                        <span class="x-user-handle">@dodecagenshin12</span>
+                                    </div>
+                                    <i class="fab fa-x-twitter" style="margin-left: auto; font-size: 1.5rem; color: var(--text-muted);"></i>
+                                </div>
+                                <div class="x-card-body">
+                                    <p>最新の制作情報や開発の裏側、AIツールの更新情報をXで発信中。自動化のヒントが見つかるかもしれません。</p>
+                                </div>
+                                <div class="x-card-footer">
+                                    <span class="x-cta">最新のポストを見る <i class="fas fa-arrow-right"></i></span>
+                                    <span>Follow on X</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
+
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <script>
+                    // Xウィジェットの読み込み監視
+                    window.addEventListener('load', () => {
+                        const timeout = 5000; // 5秒待つ
+                        const widgetCheck = setInterval(() => {
+                            const widget = document.querySelector('.twitter-timeline-rendered');
+                            if (widget) {
+                                // ウィジェットがレンダリングされた
+                                clearInterval(widgetCheck);
+                                console.log('X Widget loaded successfully.');
+                                // もし中身が空（Rate limit）の場合は、CSSの高さ等で判定できる場合があるが
+                                // 基本的にレンダリングされたら一旦信じる
+                            }
+                        }, 500);
+
+                        // タイムアウト設定
+                        setTimeout(() => {
+                            const widget = document.querySelector('.twitter-timeline-rendered');
+                            if (!widget) {
+                                clearInterval(widgetCheck);
+                                console.warn('X Widget failed to load or timed out. Showing fallback.');
+                                document.getElementById('x-timeline-container').style.display = 'none';
+                                document.getElementById('x-fallback').classList.add('active');
+                                document.getElementById('x-widget-wrapper').style.background = 'transparent';
+                                document.getElementById('x-widget-wrapper').style.border = 'none';
+                            }
+                        }, timeout);
+                    });
+                </script>
             </section>
 
             <!-- 履歴 -->
